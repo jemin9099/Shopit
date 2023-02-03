@@ -219,71 +219,19 @@
         </v-container>
     </v-card>
 </v-container>
-<Chat :onSend="handleSendEvent" :chat="data" :bgColorHeader="darkTheme && '#1e1e1e'" :bgColorChat="darkTheme && '#2C2D2E'" :bgColorInput="darkTheme && '#1e1e1e'" :bgColorIcon="darkTheme && '#9B51E0'" :bgColorMessageChatbot="darkTheme && '#1e1e1e'" :bgColorMessagePerson="darkTheme && '#9B51E0'" :bgColorMessageTimestamp="darkTheme && '#1e1e1e'" :textColorInput="darkTheme && '#fff'" :textColorHeader="darkTheme && '#fff'" :textColorMessageChatbot="darkTheme && '#fff'" :textColorMessageTimestamp="darkTheme && '#fff'" />
+
 </template>
 
 <script>
-import {
-    Chat
-} from "@chat-ui/vue3";
-import {
-    ref
-} from 'vue'
+
 export default {
     name: 'Home',
     data: () => ({
         overlay: false,
-        darkTheme: ref(false),
-        data: [{
-                message: 'Hi! How are you?',
-                type: 'chatbot',
-                timestamp: '3:45 PM'
-            },
-            {
-                message: 'Hello, i\'m fine, thanks.',
-                type: 'person',
-                timestamp: '3:46 PM'
-            },
-            {
-                message: 'How can i help you?',
-                type: 'chatbot',
-                timestamp: '3:47 PM'
-            },
-        ]
+       
     }),
     methods: {
-        handleSendEvent(input) {
-            if (input == '') return;
-            const messagePerson = {
-                type: 'person',
-                timestamp: formatAMPM(new Date()),
-                message: input
-            }
-            this.data.value.push(messagePerson)
-            setTimeout(async () => {
-                const response = await fetch('https://www.boredapi.com/api/activity')
-                const res = await response.json()
-                const messageChatbot = {
-                    type: 'chatbot',
-                    timestamp: formatAMPM(new Date()),
-                    message: res.activity
-                }
-                this.data.value.push(messageChatbot)
-            }, getRandomNumber())
-        }
-    },
-    getRandomNumber() {
-        return Math.floor(Math.random() * (2000 - 1000 + 1)) + 1000;
-    },
-    formatAMPM(date) {
-        var hours = date.getHours();
-        var minutes = date.getMinutes();
-        var ampm = hours >= 12 ? 'PM' : 'AM';
-        hours = hours % 12;
-        hours = hours ? hours : 12; // the hour '0' should be '12'
-        minutes = minutes < 10 ? '0' + minutes : minutes;
-        var strTime = hours + ':' + minutes + ' ' + ampm;
-        return strTime;
+       
     },
     watch: {
         overlay(val) {
