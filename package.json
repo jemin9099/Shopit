@@ -1,0 +1,43 @@
+{
+  "name": "shopit",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@chat-ui/vue3": "^1.0.11",
+    "@google-pay/button-element": "^3.0.5",
+    "@headlessui/vue": "^1.7.8",
+    "@mdi/font": "5.9.55",
+    "@vue-stripe/vue-stripe": "^4.4.4",
+    "axios": "^1.2.3",
+    "core-js": "^3.8.3",
+    "paytm-blink-checkout-vue": "^0.1.0",
+    "razorpay": "^2.8.4",
+    "roboto-fontface": "*",
+    "vue": "^3.2.13",
+    "vue-paypal-checkout": "^3.2.0",
+    "vue-router": "^4.1.6",
+    "vuetify": "^3.0.0-beta.0",
+    "vuex": "^4.0.2",
+    "vuexy": "^1.1.3",
+    "webfontloader": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "vue-cli-plugin-vuetify": "~2.5.8",
+    "vue-stripe-js": "^1.0.1",
+    "webpack-plugin-vuetify": "^2.0.0-alpha.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}
